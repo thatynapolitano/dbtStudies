@@ -1,0 +1,1 @@
+SELECT * FROM `dbtstudies-468320.schema.Clientes`

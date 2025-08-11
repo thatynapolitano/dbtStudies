@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: clientes
+    description: "nome e idade dos clientes"
+    columns:
+      - name: nome
+        description: "nome do inscrito"
+        tests:
+          - unique
+          - not_null
+
+  - name: stage_clientes
+    description: "dados de inscritos transformados"
+    columns:
+      - name: maiority
+        description: "true se a idade for maior que 25"
+        tests:
+          - not_null
+
+  - name: analise_clientes
+    description: "agrupamento de clientes por maioridade"
+    columns:
+      - name: maiority
+        description: "true se a idade for maior que 25"
+        tests:
+          - accepted_values:
+              values: [True, False]
+              quote: false
