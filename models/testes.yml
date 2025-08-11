@@ -5,13 +5,13 @@ models:
     description: "nome e idade dos clientes"
     columns:
       - name: nome
-        description: "nome do inscrito"
+        description: "nome do cliente"
         tests:
           - unique
           - not_null
 
   - name: stage_clientes
-    description: "dados de inscritos transformados"
+    description: "dados de clientes transformados"
     columns:
       - name: maiority
         description: "true se a idade for maior que 25"
