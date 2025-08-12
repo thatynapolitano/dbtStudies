@@ -6,7 +6,12 @@ sources:
     schema: jaffle_shop 
     tables:
       - name: orders
+        freshness: # make this a little more strict
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 1, period: day}
+        loaded_at_field: _etl_loaded_at # changed to config in v1.10  
       - name: customers
+
 
   - name: stripe
     database: dbt-tutorial
