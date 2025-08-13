@@ -52,6 +52,5 @@ models:
                 - returned
                 - return_pending
                 - placed 
-              quote: false 
 
           
