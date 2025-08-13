@@ -27,3 +27,31 @@ models:
           - accepted_values:
               values: [True, False]
               quote: false
+
+  - name: stg_jaffle_shop_customers
+    description: "tabela de clientes jaffle shop"
+    columns: 
+        - name: id
+          tests: 
+          - unique
+          - not_null
+
+  - name: stg_jaffle_shop_orders
+    description: "tabela de pedidos jaffle shop"
+    columns:
+      - name: id 
+        tests:
+          - unique 
+          - not_null
+      - name: status 
+        tests:
+          - accepted_values:
+              values:
+                - completed
+                - shipped
+                - returned
+                - return_pending
+                - placed 
+              quote: false 
+
+          
