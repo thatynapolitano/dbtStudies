@@ -4,7 +4,7 @@ models:
   - name: clientes
     description: "nome e idade dos clientes"
     columns:
-      - name: nome
+      - name: name
         description: "nome do cliente"
         tests:
           - unique
