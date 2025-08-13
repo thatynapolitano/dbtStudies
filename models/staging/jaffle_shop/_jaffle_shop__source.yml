@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: dbt-tutorial
+    schema: jaffle_shop 
+    tables:
+      - name: orders
+        description: tabela de pedidos  
+        freshness: # make this a little more strict
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 1, period: day}
+        loaded_at_field: _etl_loaded_at # changed to config in v1.10  
+      - name: customers
+        description: tabela de clientes 
+
+
+  - name: stripe
+    description: tabela de pagamentos 
+    database: dbt-tutorial
+    schema: stripe
+    tables:
+      - name: payment

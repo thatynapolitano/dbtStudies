@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: clientes
+    description: "nome e idade dos clientes"
+    columns:
+      - name: name
+        description: "nome do cliente"
+        tests:
+          - unique
+          - not_null
+
+  - name: stage_clientes
+    description: "dados de clientes transformados"
+    columns:
+      - name: maiority
+        description: "true se a idade for maior que 25"
+        tests:
+          - not_null
+
+  - name: analise_clientes
+    description: "agrupamento de clientes por maioridade"
+    columns:
+      - name: maiority
+        description: "true se a idade for maior que 25"
+        tests:
+          - accepted_values:
+              values: [True, False]
+              quote: false
+
+  - name: stg_jaffle_shop_customers
+    description: "tabela de clientes jaffle shop"
+    columns: 
+        - name: id
+          tests: 
+          - unique
+          - not_null
+
+  - name: stg_jaffle_shop_orders
+    description: "tabela de pedidos"
+    columns:
+      - name: id 
+        tests:
+          - unique 
+          - not_null
+      - name: status
+        description: "{{ doc ('order_status') }}" 
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['completed', 'shipped', 'returned', 'return_pending', 'placed']
+
+          
