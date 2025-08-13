@@ -37,13 +37,14 @@ models:
           - not_null
 
   - name: stg_jaffle_shop_orders
-    description: "{{ doc ('order status')}}"
+    description: "tabela de pedidos"
     columns:
       - name: id 
         tests:
           - unique 
           - not_null
-      - name: status 
+      - name: status
+        description: "{{ doc ('order status')}}" 
         tests:
           - accepted_values:
               values: ['completed', 'shipped', 'returned', 'return_pending', 'placed']
