@@ -47,7 +47,6 @@ models:
         description: "{{ doc ('order_status') }}" 
         tests:
           - accepted_values:
-              arguments:
                 values: ['completed', 'shipped', 'returned', 'return_pending', 'placed']
 
           
