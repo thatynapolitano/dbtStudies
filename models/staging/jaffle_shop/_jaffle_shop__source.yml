@@ -14,10 +14,9 @@ sources:
       - name: customers
         description: tabela de clientes 
 
-
-  - name: stripe
-    description: tabela de pagamentos 
-    database: dbt-tutorial
-    schema: stripe
-    tables:
-      - name: payment
+  # - name: stripe
+  #   description: tabela de pagamentos 
+  #   database: dbt-tutorial
+  #   schema: stripe
+  #   tables:
+  #     - name: payment
