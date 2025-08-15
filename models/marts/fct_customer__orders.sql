@@ -11,7 +11,7 @@ payments as (
     select * from {{ ref('stg_stripe_payment') }}
 ),
 
--- Staging  
+-- Staging   
 customer_names as (
     select
         id as customer_id,
